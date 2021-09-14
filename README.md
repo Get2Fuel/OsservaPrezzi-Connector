@@ -15,7 +15,7 @@ Fields:
 | fuelType  | Name of the fuel                        |
 | service   | Type of service                         |
 
-Example: `/search/Lombardia/MI/Milano/gasoline/self/`
+Example: `/geolocate/45.70846176147461/9.313352584838867/gasoline/any/`
 
 ### Get pumps via position(manual search)
 
@@ -38,6 +38,13 @@ Example: `/search/Lombardia/MI/Milano/gasoline/self/`
 You can find the possible values for the fields in the json folder of the repo.
 
 ## Commits history
+
+### 2021-09-14
+
+#### Added cors support
+
+- added cors support
+- updated README.md
 
 ### 2021-09-14
 

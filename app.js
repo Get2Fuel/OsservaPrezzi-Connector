@@ -1,9 +1,13 @@
 import express from "express";
+import cors from "cors";
 import api from "./api.js";
 
 const app = express();
-const port = 3000;
+const corsing = cors();
+const port = 3100;
 const server = api;
+
+app.use(corsing);
 
 app.get(
   "/search/:region/:province/:town/:fuelType/:service/",
