@@ -2,8 +2,7 @@ import axios from "axios";
 import querystring from "querystring";
 
 const api = async (action, fields) => {
-  const x = action;
-  const url = "https://carburanti.mise.gov.it/OssPrezziSearch/ricerca/localita";
+  const baseURL = "https://carburanti.mise.gov.it/OssPrezziSearch/ricerca/";
   const params = querystring.stringify(fields);
   const config = {
     headers: {
@@ -11,7 +10,7 @@ const api = async (action, fields) => {
     },
   };
 
-  const response = await axios.post(url, params, config);
+  const response = await axios.post(baseURL + action, params, config);
   const data = {
     center: {
       lat: response.data.center.first,
@@ -67,7 +66,7 @@ const api = async (action, fields) => {
         }
       }
     });
-    console.log(pumpObj);
+    // console.log(pumpObj);
     data.pumps.push(pumpObj);
   });
   return data;
