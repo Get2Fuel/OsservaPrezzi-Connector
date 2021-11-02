@@ -4,7 +4,7 @@ import api from "./api.js";
 
 const app = express();
 const corsing = cors();
-const port = 3100;
+const port = 61234;
 const server = api;
 
 app.use(corsing);
@@ -37,7 +37,7 @@ app.get(
 );
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://192.168.0.70:${port}`);
 });
 
 const regions = {
