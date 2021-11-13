@@ -3,7 +3,9 @@ import cors from "cors";
 import api from "./api.js";
 
 const app = express();
-const corsing = cors();
+const corsing = cors({
+  origin: "*",
+});
 const port = 61234;
 const server = api;
 
