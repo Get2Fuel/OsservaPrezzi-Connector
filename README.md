@@ -41,6 +41,13 @@ You can find the possible values for the fields in the json folder of the repo.
 
 ### 2021-09-14
 
+#### Added Log file
+
+- added log file for easier error detection
+- updated README.md
+
+### 2021-09-14
+
 #### Correction in cors support
 
 - correction in cors support

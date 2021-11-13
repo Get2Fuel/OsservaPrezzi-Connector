@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import fs from "fs";
 import api from "./api.js";
 
 const app = express();
@@ -33,7 +34,12 @@ app.get(
       carb: fuelType[req.params.fuelType] + "-" + service[req.params.service],
       ordPrice: "asc",
     });
-    console.log(response);
+    fs.appendFile("file.log", response ? "success" : null, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
     res.send(response);
   }
 );
