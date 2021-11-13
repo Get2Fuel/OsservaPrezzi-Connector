@@ -34,7 +34,7 @@ app.get(
       carb: fuelType[req.params.fuelType] + "-" + service[req.params.service],
       ordPrice: "asc",
     });
-    fs.appendFile("file.log", response ? "success" : null, (err) => {
+    fs.appendFile("osservaprezzi.log", response ? "success\n" : null, (err) => {
       if (err) {
         console.error(err);
         return;
