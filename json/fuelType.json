@@ -1,6 +1,15 @@
 {
   "gasoline": "1",
-  "diesel": "2",
+  "petrol": "2",
   "methane": "3",
-  "lpg": "4"
+  "lpg": "4",
+  "hundredOctane": "7",
+  "eniBlueSuper": "5",
+  "eniBlueDiesel": "20",
+  "essoSupremeDiesel": "327",
+  "essoGasolioPremium": "10",
+  "q8HiQDiesel": "6",
+  "q8HiQPerformPlus": "28",
+  "L-GNC": "323",
+  "GNL": "324"
 }

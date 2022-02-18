@@ -39,12 +39,12 @@ const api = async (action, fields) => {
         }
       }
       if (fuel.idCarb === 2) {
-        pumpObj.fuels.diesel = { ...pumpObj.fuels.diesel };
-        if (fuel.isSelf === 1 && pumpObj.fuels.diesel.self !== false) {
-          pumpObj.fuels.diesel.self = +fuel.prezzo;
+        pumpObj.fuels.petrol = { ...pumpObj.fuels.petrol };
+        if (fuel.isSelf === 1 && pumpObj.fuels.petrol.self !== false) {
+          pumpObj.fuels.petrol.self = +fuel.prezzo;
         }
-        if (fuel.isSelf === 0 && pumpObj.fuels.diesel.served !== false) {
-          pumpObj.fuels.diesel.served = +fuel.prezzo;
+        if (fuel.isSelf === 0 && pumpObj.fuels.petrol.served !== false) {
+          pumpObj.fuels.petrol.served = +fuel.prezzo;
         }
       }
       if (fuel.idCarb === 3) {

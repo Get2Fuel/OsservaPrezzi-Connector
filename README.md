@@ -39,6 +39,15 @@ You can find the possible values for the fields in the json folder of the repo.
 
 ## Commits history
 
+### 2022-02-19
+
+#### Minor changes
+
+- refactored diesel to petrol
+- added sorting to results since the api native feature does not work
+- added all available fuels in a separate json file for future support
+- updated README.md
+
 ### 2021-09-14
 
 #### Added Log file

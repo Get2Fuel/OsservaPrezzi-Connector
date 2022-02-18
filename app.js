@@ -40,6 +40,10 @@ app.get(
         return;
       }
     });
+    response.pumps.sort(
+      (a, b) =>
+        a.fuels[req.params.fuelType].self - b.fuels[req.params.fuelType].self
+    );
     res.send(response);
   }
 );
@@ -73,7 +77,7 @@ const regions = {
 
 const fuelType = {
   gasoline: "1",
-  diesel: "2",
+  petrol: "2",
   methane: "3",
   lpg: "4",
 };
