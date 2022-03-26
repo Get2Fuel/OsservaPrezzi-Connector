@@ -1,6 +1,10 @@
 # OsservaPrezzi-Connector
 
-## APIs
+## API v1
+
+### Soon available
+
+## Legacy APIs
 
 ### Get pumps via geolocation(coordinates)
 
@@ -38,6 +42,16 @@ Example: `/search/Lombardia/MI/Milano/gasoline/self/`
 You can find the possible values for the fields in the json folder of the repo.
 
 ## Commits history
+
+### 2022-03-26
+
+#### Complete refactor
+
+- completely changed project structure
+- implemented MVC paradigm
+- started working on completely new API
+- legacy API will be back soon for compatibility
+- updated README.md
 
 ### 2022-02-19
 

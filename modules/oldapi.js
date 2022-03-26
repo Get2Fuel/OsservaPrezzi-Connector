@@ -1,7 +1,7 @@
 import axios from "axios";
 import querystring from "querystring";
 
-const api = async (action, fields) => {
+export default oldApi = async (action, fields) => {
   const baseURL = "https://carburanti.mise.gov.it/OssPrezziSearch/ricerca/";
   const params = querystring.stringify(fields);
   const config = {
@@ -71,5 +71,3 @@ const api = async (action, fields) => {
   });
   return data;
 };
-
-export default api;
