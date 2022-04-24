@@ -13,23 +13,26 @@ export const findOneByPumpId = async (pumpId) => {
   return pump;
 };
 
-export const findByAddress = async (params) => {};
+export const findByAddress = async (params) => {
+  const pumps = await pumpModel.find({});
+
+  return pumps;
+};
 
 export const findByGeolocation = async (params) => {
-  const pumps = await pumpModel
-    .find({
-      coordinates: {
-        $nearSphere: {
-          $geometry: {
-            type: "Point",
-            coordinates: [+params.longitude, +params.latitude],
-          },
-          $minDistance: 0,
-          $maxDistance: +params.maxDistance * 1000 || 5000,
+  const pumps = await pumpModel.find({
+    coordinates: {
+      $nearSphere: {
+        $geometry: {
+          type: "Point",
+          coordinates: [+params.longitude, +params.latitude],
         },
+        $minDistance: 0,
+        $maxDistance: +params.maxDistance * 1000 || 5000,
       },
-    })
-    .sort({ "fuels.gasoline.self": 1 });
+    },
+  });
+  // .sort({ "fuels.gasoline.self": 1 });
 
   return pumps;
 };

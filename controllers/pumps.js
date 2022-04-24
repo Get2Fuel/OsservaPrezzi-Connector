@@ -1,4 +1,5 @@
 import {
+  findByAddress,
   findByGeolocation,
   findOneById,
   findOneByPumpId,
@@ -24,11 +25,10 @@ export const getFilterdPumps = async (req, res) => {
 
     return res.status(200).json(pumps);
   }
-  if (req.query.region) {
+  if (req.query.region || req.query.province || req.query.town) {
     const { region, province, town, fuelType, service, sort } = req.query;
 
-    return res.status(200).json({
-      searchBy: "address",
+    const pumps = await findByAddress({
       region,
       province,
       town,
@@ -36,6 +36,8 @@ export const getFilterdPumps = async (req, res) => {
       service,
       sort,
     });
+
+    return res.status(200).json(pumps);
   }
   res
     .status(200)
