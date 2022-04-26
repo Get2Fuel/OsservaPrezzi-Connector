@@ -1,4 +1,4 @@
-export default regions = {
+const regions = {
   Marche: 1,
   Abruzzo: 2,
   Basilicata: 3,
@@ -20,3 +20,5 @@ export default regions = {
   Lombardia: 19,
   Umbria: 20,
 };
+
+export default regions;
