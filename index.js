@@ -17,7 +17,7 @@ const app = express();
 app.use(corsing);
 
 // Setup public dir
-app.use(express.static("./public"));
+app.use(express.static(__dirname + "/public"));
 
 // Install routers
 app.use("/api/legacy/pumps", legacyPumps);
