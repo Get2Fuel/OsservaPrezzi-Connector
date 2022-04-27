@@ -3,6 +3,7 @@ import getfuelsObject from "./getFuelsObject.js";
 import regions from "../static/regions.js";
 
 const findPumpByName = async (name) => {
+  console.log(`Trying to find pump with name ${name}...`);
   const baseURL = "https://carburanti.mise.gov.it/ospzApi/search/servicearea/";
   const queryParams = { queryText: name };
   const config = {
@@ -35,7 +36,7 @@ export const findOneByPumpId = async (pumpId) => {
   const baseURL =
     "https://carburanti.mise.gov.it/ospzApi/registry/servicearea/";
   const response = await axios.get(baseURL + pumpId);
-  const pump = await findPumpByName(response.data.name);
+  const pump = await findPumpByName(response.data.nomeImpianto);
   return pump;
 };
 

@@ -39,6 +39,13 @@ You can find the possible values for the fields under `/static/json` folder in t
 
 ## Commits history
 
+### 2022-04-27
+
+#### Fixed search by ID issue
+
+- `nomeImpianto` field used instead of `name` to get informations about pump
+- updated README.md
+
 ### 2022-04-26
 
 #### Focus on legacy API
