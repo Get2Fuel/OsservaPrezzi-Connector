@@ -1,10 +1,14 @@
 # OsservaPrezzi-Connector
 
-## APIs
+## API v1
+
+### Soon available
+
+## Legacy APIs
 
 ### Get pumps via geolocation(coordinates)
 
-Path: `/geolocate/{latitude}/{longidute}/{fuelType}/{service}/`
+Path: `/api/legacy/pumps/query?latitude={latitude}&longitude={longitude}`
 
 Fields:
 
@@ -12,14 +16,12 @@ Fields:
 | --------- | --------------------------------------- |
 | latitude  | Latitude number with 15 decimal digits  |
 | longitude | Longitude number with 15 decimal digits |
-| fuelType  | Name of the fuel                        |
-| service   | Type of service                         |
 
-Example: `/geolocate/45.70846176147461/9.313352584838867/gasoline/any/`
+Example: `/api/legacy/pumps/query?latitude=45.731339159322104&longitude=9.391183295883996`
 
 ### Get pumps via position(manual search)
 
-Path: `/search/{region}/{province}/{town}/{fuelType}/{service}/`
+Path: `/api/legacy/pumps/query?region={region}&province={province}&town={town}`
 
 Fields:
 
@@ -28,16 +30,39 @@ Fields:
 | region   | Complete name of the region           |
 | province | Standard 2 letters code for provinces |
 | town     | Complete name of the town             |
-| fuelType | Name of the fuel                      |
-| service  | Type of service                       |
 
-Example: `/search/Lombardia/MI/Milano/gasoline/self/`
+Example: `/api/legacy/pumps/query?region=Lombardia&province=MI&town=Sesto%20San%20Giovanni`
 
 ---
 
-You can find the possible values for the fields in the json folder of the repo.
+You can find the possible values for the fields under `/static/json` folder in the repo.
 
 ## Commits history
+
+### 2022-04-27
+
+#### Fixed search by ID issue
+
+- `nomeImpianto` field used instead of `name` to get informations about pump
+- updated README.md
+
+### 2022-04-26
+
+#### Focus on legacy API
+
+- legacy API work
+- fixed some issues
+- updated README.md
+
+### 2022-03-26
+
+#### Complete refactor
+
+- completely changed project structure
+- implemented MVC paradigm
+- started working on completely new API
+- legacy API will be back soon for compatibility
+- updated README.md
 
 ### 2022-02-19
 
