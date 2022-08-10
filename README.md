@@ -41,6 +41,12 @@ You can find the possible values for the fields under `/static/json` folder in t
 
 ### 2022-04-27
 
+#### Implementing search
+
+- changed fields in legacy API functions
+- added some js for future search implementation
+- updated README.md
+
 #### Fixed search by ID issue
 
 - `nomeImpianto` field used instead of `name` to get informations about pump

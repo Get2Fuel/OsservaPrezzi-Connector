@@ -2,7 +2,13 @@ import axios from "axios";
 import getfuelsObject from "./getFuelsObject.js";
 import regions from "../static/regions.js";
 
-const findPumpByName = async (name) => {
+export const findPumpByName = async ({
+  name,
+  brand,
+  province,
+  region,
+  fuelType,
+}) => {
   console.log(`Trying to find pump with name ${name}...`);
   const baseURL = "https://carburanti.mise.gov.it/ospzApi/search/servicearea/";
   const queryParams = { queryText: name };
@@ -36,16 +42,23 @@ export const findOneByPumpId = async (pumpId) => {
   const baseURL =
     "https://carburanti.mise.gov.it/ospzApi/registry/servicearea/";
   const response = await axios.get(baseURL + pumpId);
-  const pump = await findPumpByName(response.data.nomeImpianto);
+  const pump = await findPumpByName({ name: response.data.nomeImpianto });
   return pump;
 };
 
-export const findByAddress = async (params) => {
+export const findByAddress = async ({
+  region,
+  province,
+  town,
+  fuelType,
+  service,
+  sort,
+}) => {
   const baseURL = "https://carburanti.mise.gov.it/ospzApi/search/area/";
   const queryParams = {
-    region: regions[params.region],
-    province: params.province,
-    town: params.town,
+    region: regions[region],
+    province: province,
+    town: town,
   };
   const config = {
     headers: {
@@ -75,10 +88,16 @@ export const findByAddress = async (params) => {
   return pumps;
 };
 
-export const findByGeolocation = async (params) => {
+export const findByGeolocation = async ({
+  latitude,
+  longitude,
+  fuelType,
+  service,
+  sort,
+}) => {
   const baseURL = "https://carburanti.mise.gov.it/ospzApi/search/zone/";
   const queryParams = {
-    points: [{ lat: +params.latitude, lng: +params.longitude }],
+    points: [{ lat: +latitude, lng: +longitude }],
   };
   const config = {
     headers: {
